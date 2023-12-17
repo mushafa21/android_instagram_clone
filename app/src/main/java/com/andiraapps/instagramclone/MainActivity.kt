@@ -24,9 +24,7 @@ import com.andiraapps.instagramclone.compose.HomeScreen
 import com.andiraapps.instagramclone.ui.theme.InstagramCloneTheme
 
 
-val nameList : List<String> = listOf(
-    "Udin","Suci","Rio","Shafwan"
-)
+
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -44,30 +42,6 @@ class MainActivity : ComponentActivity() {
         }
     }
 
-    @Composable
-    fun NormalColumn(){
-        Column(
-            modifier = Modifier.verticalScroll(rememberScrollState())
-        ) {
-            repeat(1000){
-                Text(text = "Ini Button")
-                Button(onClick = {  }) {
-                    Text(text = "CLICK")
-                }
-            }
-
-        }
-    }
-
-
-    @Composable
-    fun LazyColumnExample(){
-        LazyColumn(){
-            itemsIndexed(nameList){index,name ->
-                Text(text = "${index +1}. $name")
-            }
-        }
-    }
 
 
 }
