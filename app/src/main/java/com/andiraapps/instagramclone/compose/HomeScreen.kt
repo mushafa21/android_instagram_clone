@@ -114,80 +114,18 @@ fun HomeScreen() {
                     )
                 },
                 actions = {
-                    Image(
-                        painter = painterResource(id = R.drawable.ic_add_post),
-                        contentDescription = null
+                    Image(painter = painterResource(id = R.drawable.ic_add_post), contentDescription = null
                     )
                     Spacer(modifier = Modifier.width(16.dp))
-                    Image(
-                        painter = painterResource(id = R.drawable.ic_heart),
-                        contentDescription = null
+                    Image(painter = painterResource(id = R.drawable.ic_heart), contentDescription = null)
+                    Spacer(modifier = Modifier.width(16.dp))
+                    Image(painter = painterResource(id = R.drawable.ic_share), contentDescription = null
                     )
                     Spacer(modifier = Modifier.width(16.dp))
-                    Image(
-                        painter = painterResource(id = R.drawable.ic_share),
-                        contentDescription = null
-                    )
-                    Spacer(modifier = Modifier.width(16.dp))
-
-
                 }
             )
         },
-        bottomBar = {
-
-            BottomNavigation(
-                backgroundColor = Color.White
-            ) {
-                BottomNavigationItem(selected = true, onClick = {}, icon = {
-                    Image(
-                        painter = painterResource(id = R.drawable.ic_navigation_home),
-                        contentDescription = null
-                    )
-                })
-
-                BottomNavigationItem(selected = false, onClick = {}, icon = {
-                    Image(
-                        painter = painterResource(id = R.drawable.ic_navigation_search),
-                        contentDescription = null
-                    )
-                })
-
-                BottomNavigationItem(selected = false, onClick = {}, icon = {
-                    Image(
-                        painter = painterResource(id = R.drawable.ic_navigation_reels),
-                        contentDescription = null
-                    )
-                })
-
-
-                BottomNavigationItem(selected = false, onClick = {}, icon = {
-                    Image(
-                        painter = painterResource(id = R.drawable.ic_navigation_shop),
-                        contentDescription = null
-                    )
-                })
-
-                BottomNavigationItem(selected = false, onClick = {}, icon = {
-                    Image(
-                        painter = painterResource(id = R.drawable.img_avatar1),
-                        contentDescription = null,
-                        modifier = Modifier
-                            .clip(
-                                CircleShape
-                            )
-                            .width(20.dp)
-                            .height(20.dp),
-                        contentScale = ContentScale.Crop
-                    )
-                })
-
-
-            }
-        }
     ) {
-
-
         LazyColumn(
             modifier = Modifier.padding(it),
         ) {
@@ -195,7 +133,6 @@ fun HomeScreen() {
                 LazyRow(modifier = Modifier.padding(horizontal = 8.dp)) {
                     item {
                         YourStoryView()
-
                     }
                     items(storyList) { story ->
                         StoryItem(story = story)
@@ -205,12 +142,8 @@ fun HomeScreen() {
             items(postList) { post ->
                 PostItem(post = post)
             }
-
         }
-
-
     }
-
 }
 
 
